@@ -103,7 +103,7 @@ export default function App() {
         checkAnswers = {checkAnswers}
         answersChecked = {answersChecked}
         playAgain={playAgain}
-        score={score}
+
         />
 
         </div>

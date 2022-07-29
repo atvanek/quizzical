@@ -56,7 +56,6 @@ export default function Quiz(props) {
                 <button className='check-answers' onClick={props.checkAnswers}> Check Answers </button>)
                 :
                 <div>
-                <p>{props.score}</p>
                 <button className='play-again' onClick={props.playAgain}> Play Again </button>
                 </div>
             }
