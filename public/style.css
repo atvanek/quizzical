@@ -14,22 +14,20 @@ h1{
     font-family: 'Karla';
     font-style: normal;
     font-weight: 700;
-    font-size: 31.25px;
-    line-height: 37px;
+    font-size: 80px;
     text-align: center;
     color: #293264;
 }
 
-.quiz-description{
+.quiz-description, .score{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 40px;
     text-align: center;
     color: #293264;
     width: 100%;
-    padding: 45px 0px;
+    padding: 10% 0px;
 }
 
 button {
@@ -40,10 +38,9 @@ button {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 40px;
     text-align: center;
-    padding: 15px 25px;
+    padding: 5% 10%;
 }
 
 .start-container{
@@ -51,16 +48,15 @@ button {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    margin: 10%;
+    margin: 15%;
 }
 
-h3{
+h3, .score{
     
     font-family: 'Karla';
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: px;
     color: #293264;
 
 }
@@ -69,8 +65,7 @@ h3{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    font-size: 10.24px;
-    line-height: 12px;
+    font-size: 16px;
     text-align: center;
     color: #293264;
     border: 0.771045px solid #4D5B9E;
@@ -117,3 +112,18 @@ h3{
     border-radius: 7.71045px;
     border: none;
 }
+
+button.check-answers, button.play-again{
+    font-size: 24px;
+    margin: 20px 0;
+    padding: 20px;   
+}
+
+.score-and-reset{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+
+
