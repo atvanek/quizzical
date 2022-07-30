@@ -58,6 +58,7 @@ export default function Quiz(props) {
                 <div className='score-and-reset'>
                 <p className='score'>Your score: {props.score} / {props.questions.length}</p>
                 <button className='play-again' onClick={props.playAgain}> Play Again </button>
+                <button className='back-to-options'>Back to Options</button>
                 </div>
             }
             </div>

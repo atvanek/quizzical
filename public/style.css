@@ -27,7 +27,51 @@ h1{
     text-align: center;
     color: #293264;
     width: 100%;
-    padding: 10% 0px;
+}
+
+.form-container{
+    display: flex;
+    flex-flow: row no-wrap;
+    align-items: center;
+}
+
+label, .incomplete{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #293264;
+    text-align: center;
+    padding: 20px;
+}
+
+.incomplete-container{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.incomplete{
+    color: red;
+    padding: 15px;
+    margin: 0;
+}
+
+.submit-container{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+select {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #293264;
+    border-color:  #293264;
+    border-radius: 8px;
 }
 
 button {
@@ -38,10 +82,11 @@ button {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
-    padding: 5% 10%;
+    padding: 15px;
 }
+
 
 .start-container{
     display: flex;
@@ -113,9 +158,9 @@ h3, .score{
     border: none;
 }
 
-button.check-answers, button.play-again{
+button.check-answers, button.play-again, button.back-to-options{
     font-size: 24px;
-    margin: 20px 0;
+    margin: 20px;
     padding: 20px;   
 }
 
