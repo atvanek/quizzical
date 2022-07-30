@@ -50,17 +50,27 @@ export default function Quiz(props) {
 
 
     return ( 
+
+        props.answers.length === 0 ?
+            
+            <p className='creating-quiz'>Creating Quiz...</p>
+    
+        
+        :
+             
             <div className='quiz-container'>
-                { questionComponents }
-                {!props.answersChecked ? (
-                <button className='check-answers' onClick={props.checkAnswers}> Check Answers </button>)
-                :
-                <div className='score-and-reset'>
+            { questionComponents }
+
+            {!props.answersChecked ? <button className='check-answers' onClick={props.checkAnswers}> Check Answers </button>
+            
+            :
+
+            <div className='score-and-reset'>
                 <p className='score'>Your score: {props.score} / {props.questions.length}</p>
                 <button className='play-again' onClick={props.playAgain}> Play Again </button>
-                <button className='back-to-options'>Back to Options</button>
-                </div>
-            }
-            </div>
-                )
+                <button className='back-to-options' onClick={props.toOptions}>Back to Options</button>
+            </div>}
+        </div>)
+            
+                
             }

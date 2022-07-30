@@ -1,6 +1,7 @@
 import React from 'react'
 import Quiz from './Quiz'
 import { nanoid } from 'nanoid'
+import { BrowserRouter } from "react-router-dom"
 import { toBeInTheDOM } from '@testing-library/jest-dom/dist/matchers';
 
 export default function App() {
@@ -88,11 +89,14 @@ export default function App() {
                 setIsIncomplete(true)
                 setIncompleteMessage('Please choose a difficulty level')}
             else{
-                    setStarted(true);
-                    fetchAPIdata(apiUrl)}
+                    
+                    fetchAPIdata(apiUrl)
+                    setStarted(true);}
             
         
         }
+
+        console.log(answers)
 
     function handleChange(e){
         setOptions(prevOptions =>{
@@ -132,7 +136,20 @@ export default function App() {
         e.preventDefault();
         setNewGame(prevGame => !prevGame)
         setAnswersChecked(false)
+        setAnswers([])
         fetchAPIdata(apiUrl);
+    }
+
+    function toOptions () {
+        setStarted(false)
+        setOptions({
+            numQuestions: 'choose',
+            category: 'choose',
+            difficulty: 'choose'
+        })
+        setIncompleteMessage('')
+        setAnswersChecked(false)
+        setAnswers([])
     }
 
         return (
@@ -144,6 +161,7 @@ export default function App() {
             <p className='quiz-description'>Test your knowledge with randomly generated trivia questions!</p>
         
         <div className='form-container'>
+            <div className='questions-container'>
             <label htmlFor='numQuestions'>Questions</label>
                 <select 
                     id='numQuestions' 
@@ -162,7 +180,9 @@ export default function App() {
                     <option>9</option>
                     <option>10</option>
                 </select>
+                </div>
 
+            <div className='category-container'>
             <label htmlFor='category'>Category</label>
                 <select 
                 id='category' 
@@ -177,7 +197,8 @@ export default function App() {
                     <option>Animals</option>
                     <option>Celebrities</option>
                 </select>
-
+            </div>
+            <div className='difficulty-container'>
                 <label htmlFor='difficulty'>Difficulty</label>
                     <select 
                     id='difficulty' 
@@ -189,35 +210,37 @@ export default function App() {
                         <option>Medium</option>
                         <option>Hard</option>
                     </select>
-    </div>
+                    </div>
+            </div>
 
-        {isIncomplete && 
             <div className='incomplete-container'>
                  <p className='incomplete'>{incompleteMessage}</p>
-            </div>}
-        <div className='submit-container'>
+            </div>
+             <div className='submit-container'>
             <button onClick={handleSubmit}>Submit</button>
-        </div>
+            </div>
         
-    </div>
+            </div>
 
         :
+ 
+
+            <div>
 
 
-        <div>
 
+            <Quiz 
+            questions = { questions }
+            answers = { answers }
+            handleClick = {handleClick}
+            checkAnswers = {checkAnswers}
+            answersChecked = {answersChecked}
+            playAgain={playAgain}
+            score={score}
+            toOptions={toOptions}
+            />
 
-        <Quiz 
-        questions = { questions }
-        answers = { answers }
-        handleClick = {handleClick}
-        checkAnswers = {checkAnswers}
-        answersChecked = {answersChecked}
-        playAgain={playAgain}
-        score={score}
-        />
-
-        </div>
+            </div>
         
     )
 }
