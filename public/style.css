@@ -31,34 +31,43 @@ h1{
 
 .form-container{
     display: flex;
-    flex-flow: row no-wrap;
+    flex-flow: row wrap;
     align-items: center;
 }
 
-label, .incomplete{
+.questions-container, .category-container, .difficulty-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+label, .incomplete, .creating-quiz{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    color: #293264;
+    font-size: 30px;
+    color: #4D5B9E;
     text-align: center;
     padding: 20px;
+    width: 100%
 }
 
 .incomplete-container{
     width: 100%;
+    margin: 40px;
     padding: 0;
-    margin: 0;
 }
 
 .incomplete{
     color: red;
-    padding: 15px;
-    margin: 0;
+    padding: 0;
+    margin: 20px;
 }
 
 .submit-container{
-    padding: 20px;
+    margin: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -68,10 +77,13 @@ select {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 20px;
     color: #293264;
     border-color:  #293264;
-    border-radius: 8px;
+    border-radius: 12px;
+    width: 250px;
+    text-align: center;
+    padding: 5px 0;
 }
 
 button {
@@ -93,7 +105,7 @@ button {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    margin: 15%;
+    margin: 10%;
 }
 
 h3, .score{
@@ -114,7 +126,7 @@ h3, .score{
     text-align: center;
     color: #293264;
     border: 0.771045px solid #4D5B9E;
-    border-radius: 7.71045px;
+    border-radius: 12px;
     padding: 4px 8px;
     margin-right: 20px;
     cursor: pointer;
@@ -169,6 +181,5 @@ button.check-answers, button.play-again, button.back-to-options{
     flex-flow: row wrap;
     justify-content: center;
 }
-
 
 
